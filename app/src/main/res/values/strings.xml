@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">RunApp</string>
+    <string name="app_name">随意运动</string>
+    <string name="singin">登录</string>\
+    <string name="name">帐号</string>
+    <string name="pass">密码</string>
+    <string name="register">没有账号?立即注册</string>
+    <string name="register2">注册</string>
+    <string name="back">返回</string>
+    <string name="confirmpass">确认密码</string>
+    <string name="home">首页</string>
+    <string name="search">搜运动</string>
+    <string name="my">我的</string>
 </resources>

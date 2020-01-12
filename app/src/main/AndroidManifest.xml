@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Register_Activity" />
+        <activity android:name=".MainHome"></activity>
     </application>
 
 </manifest>

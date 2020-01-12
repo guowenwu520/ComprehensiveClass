@@ -6,36 +6,32 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.CircleCrop;
-import com.bumptech.glide.request.RequestOptions;
 import com.example.runapp.util.Common_Uitl;
 
-public class MainActivity extends AppCompatActivity {
-    EditText  name,pass;
-    ImageView imageView;
+public class Register_Activity extends AppCompatActivity {
+    EditText name,pass,Confirmpass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_register);
         name=findViewById(R.id.name);
         pass=findViewById(R.id.pass);
-        imageView=findViewById(R.id.headimg);
-        init();
+        Confirmpass=findViewById(R.id.Confirmpass);
     }
 
-    private void init() {
-        Glide.with(this).load(R.drawable.head).apply(RequestOptions.bitmapTransform(new CircleCrop())).into(imageView);
+    public void Back(View view) {
+        finish();
     }
 
-    //登录
-    public void SignIn(View view) {
+    public void Register(View view) {
         String namevalue=name.getText().toString().trim();
         String passvalue=pass.getText().toString().trim();
-        if(Common_Uitl.IsEmptyString(namevalue)||Common_Uitl.IsEmptyString(passvalue)){
+        String Confirmpassvalue=Confirmpass.getText().toString().trim();
+        if(Common_Uitl.IsEmptyString(namevalue)||Common_Uitl.IsEmptyString(passvalue)||Common_Uitl.IsEmptyString(Confirmpassvalue)){
             Common_Uitl.showToast(this,"输入不能为空");
+        }else if(!passvalue.equals(Confirmpassvalue)){
+            Common_Uitl.showToast(this,"密码不一致");
         }else{
             new AsyncTask<Void,Void,Void>(){
                 int fign=0;
@@ -47,17 +43,10 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 protected void onPostExecute(Void aVoid) {
-                     Intent intent=new Intent(MainActivity.this,MainHome.class);
-                    startActivity(intent);
+                    Common_Uitl.showToast(Register_Activity.this,"注册成功");
+                    finish();
                 }
             }.execute();
         }
     }
-    //注册
-    public void Register(View view) {
-        Intent intent=new Intent(this,Register_Activity.class);
-        startActivity(intent);
-    }
-
-
 }
