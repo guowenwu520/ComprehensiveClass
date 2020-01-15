@@ -29,7 +29,7 @@
         android:background="@color/colorAccent"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="65dp">
+        android:layout_height="55dp">
         <RadioButton
             android:id="@+id/home"
             android:layout_weight="1"
@@ -37,7 +37,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:button="@null"
-            android:paddingTop="10dp"
+            android:paddingTop="1dp"
             android:drawableTop="@drawable/selector_tab_home"
             android:textColor="@drawable/selector_tab_color"
             android:text="@string/home"/>
@@ -48,7 +48,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:button="@null"
-            android:paddingTop="10dp"
+            android:paddingTop="1dp"
             android:drawableTop="@drawable/selector_tab_search"
             android:textColor="@drawable/selector_tab_color"
             android:text="@string/search"/>
@@ -59,7 +59,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:button="@null"
-            android:paddingTop="10dp"
+            android:paddingTop="1dp"
             android:drawableTop="@drawable/selector_tab_my"
             android:textColor="@drawable/selector_tab_color"
             android:text="@string/my"/>

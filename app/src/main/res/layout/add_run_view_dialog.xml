@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/nickname"
+        android:layout_below="@id/head"
+        android:layout_width="match_parent"
+        android:layout_height="75dp">
+        <TextView
+            android:text="标题"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="50dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/title"
+            android:textStyle="bold"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:layout_width="170dp"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:background="@color/gray"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/yunclas"
+        android:layout_below="@id/nickname"
+        android:layout_width="match_parent"
+        android:layout_height="75dp">
+        <TextView
+            android:text="类型"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="50dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Spinner
+            android:id="@+id/class_sprot"
+            android:textStyle="bold"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:layout_width="170dp"
+            android:layout_height="50dp" />
+        <TextView
+            android:background="@color/gray"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/sss"
+        android:layout_below="@id/yunclas"
+        android:layout_width="match_parent"
+        android:layout_height="75dp">
+        <TextView
+            android:text="地点"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="50dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/address"
+            android:textStyle="bold"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:layout_width="170dp"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:background="@color/gray"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/ku2"
+        android:layout_below="@id/sss"
+        android:layout_width="match_parent"
+        android:layout_height="75dp">
+        <TextView
+            android:text="时间"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="50dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/time"
+            android:textStyle="bold"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:layout_width="170dp"
+            android:layout_height="50dp" />
+        <TextView
+            android:background="@color/gray"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/ku"
+        android:layout_below="@id/ku2"
+        android:layout_width="match_parent"
+        android:layout_height="75dp">
+        <TextView
+            android:text="简介"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="50dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/xiangx"
+            android:textStyle="bold"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:layout_width="170dp"
+            android:layout_height="50dp" />
+        <TextView
+            android:background="@color/gray"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/ssss"
+        android:text="添加视频"
+        android:layout_below="@id/ku"
+        android:layout_marginTop="10dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="50dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+     <TextView
+         android:id="@+id/kkk"
+         android:text="点击添加视频"
+         android:gravity="center"
+         android:textSize="23sp"
+         android:layout_below="@id/ssss"
+         android:layout_marginTop="10dp"
+         android:layout_centerHorizontal="true"
+         android:layout_width="300dp"
+         android:layout_height="200dp" />
+    <VideoView
+        android:visibility="invisible"
+        android:id="@+id/playvdieo"
+        android:layout_below="@id/ssss"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="300dp"
+        android:layout_height="200dp" />
+    <TextView
+        android:id="@+id/ssss2"
+        android:text="添加图片"
+        android:layout_below="@id/kkk"
+        android:layout_marginTop="10dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="50dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@id/ssss2"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="300dp"
+        android:layout_height="200dp" >
+    </android.support.v7.widget.RecyclerView>
+</RelativeLayout>
+</ScrollView>

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.runapp.MainHome;
 import com.example.runapp.R;
 
 /**
@@ -19,6 +20,7 @@ public class fragment_search extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_search,container,false);
+        MainHome.isShowTop(true);
         return view;
     }
 }

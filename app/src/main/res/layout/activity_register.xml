@@ -58,15 +58,15 @@
             android:layout_height="60dp"
             android:layout_marginBottom="10dp"/>
     </LinearLayout>
-    <TextView
+    <ImageButton
         android:id="@+id/register"
         android:onClick="Back"
         android:textStyle="bold"
         android:gravity="center"
         android:layout_marginTop="30sp"
-        android:text="@string/back"
+        android:background="@drawable/back"
         android:textSize="20sp"
         android:layout_marginLeft="20dp"
-        android:layout_width="wrap_content"
+        android:layout_width="30dp"
         android:layout_height="30dp" />
 </RelativeLayout>

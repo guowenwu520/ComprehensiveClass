@@ -3,6 +3,7 @@ package com.example.runapp;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -12,7 +13,9 @@ import com.example.runapp.fragment.fragment_search;
 
 public class MainHome extends AppCompatActivity {
     RadioGroup radioGroup;
-    TextView top;
+    static  TextView top;
+    //登录状态
+    public  static boolean ISSINMG=true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +30,11 @@ public class MainHome extends AppCompatActivity {
                 FragmentManager manager= getSupportFragmentManager();
                      switch (checkedId){
                          case R.id.home:
+                             top.setText(getResources().getString(R.string.home));
                              manager.beginTransaction().replace(R.id.mainFramet,new fragment_home()).commit();
                              break;
                          case R.id.search:
+                             top.setText(getResources().getString(R.string.search));
                              manager.beginTransaction().replace(R.id.mainFramet,new fragment_search()).commit();
                              break;
                          case R.id.my:
@@ -38,5 +43,12 @@ public class MainHome extends AppCompatActivity {
                      }
             }
         });
+    }
+    public static void  isShowTop(boolean bool){
+        if(bool){
+            top.setVisibility(View.VISIBLE);
+        }else{
+            top.setVisibility(View.GONE);
+        }
     }
 }

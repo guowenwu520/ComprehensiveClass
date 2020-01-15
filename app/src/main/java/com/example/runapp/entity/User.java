@@ -9,12 +9,28 @@ public class User {
      private  String pass;
      private String nickname;
      private String phone;
-
+     private  String urlimg;
      public User(String name, String pass, String nickname, String phone) {
           this.name = name;
           this.pass = pass;
           this.nickname = nickname;
           this.phone = phone;
+     }
+
+     public User(String name, String pass, String nickname, String phone, String urlimg) {
+          this.name = name;
+          this.pass = pass;
+          this.nickname = nickname;
+          this.phone = phone;
+          this.urlimg = urlimg;
+     }
+
+     public String getUrlimg() {
+          return urlimg;
+     }
+
+     public void setUrlimg(String urlimg) {
+          this.urlimg = urlimg;
      }
 
      public String getName() {
