@@ -24,4 +24,10 @@
     <string name="phone">手机号</string>
     <string name="save">保存</string>
     <string name="saveed">保存成功</string>
+    <string name="addsport">添加运动</string>
+    <string name="camera">拍照</string>
+    <string name="xiangce">相册</string>
+    <string name="unlick">取消</string>
+    <string name="Videoshooting">拍摄视频</string>
+    <string name="Localvideo">本地视频</string>
 </resources>

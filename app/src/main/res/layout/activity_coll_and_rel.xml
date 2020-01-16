@@ -35,7 +35,7 @@
 
     </android.support.v7.widget.RecyclerView>
     <ImageView
-        android:visibility="visible"
+        android:visibility="invisible"
         android:id="@+id/add_image"
         android:layout_margin="30dp"
         android:background="@drawable/addimg"

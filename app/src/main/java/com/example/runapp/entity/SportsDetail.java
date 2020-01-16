@@ -18,8 +18,24 @@ public class SportsDetail {
    //详细信息
    private  String detailmesg;
    private  String phone;
-
+  private  String lat,lon;
     public SportsDetail() {
+    }
+
+    public String getLat() {
+        return lat;
+    }
+
+    public void setLat(String lat) {
+        this.lat = lat;
+    }
+
+    public String getLon() {
+        return lon;
+    }
+
+    public void setLon(String lon) {
+        this.lon = lon;
     }
 
     public SportsDetail(String id, String classid, String userid, String address, String tiem, String[] imgurls, String videourl, String briefIntroduction, String title, String detailmesg, String phone) {

@@ -44,7 +44,8 @@ public class Sports_Details_Activity extends AppCompatActivity {
         addimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent=new Intent(Sports_Details_Activity.this,Add_Run_Dialog_Activity.class);
+                startActivity(intent);
             }
         });
         MyRecycleViewClassAdapter myRecycleViewClassAdapter=new MyRecycleViewClassAdapter();

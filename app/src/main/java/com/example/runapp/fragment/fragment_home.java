@@ -21,6 +21,8 @@ import com.amap.api.location.AMapLocationListener;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.runapp.Add_Run_Dialog_Activity;
+import com.example.runapp.CollAndRel_Actvity;
 import com.example.runapp.MainHome;
 import com.example.runapp.Map_Activity;
 import com.example.runapp.R;
@@ -106,7 +108,8 @@ public class fragment_home extends Fragment {
         addImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent=new Intent(getActivity(),Add_Run_Dialog_Activity.class);
+                startActivity(intent);
             }
         });
     }

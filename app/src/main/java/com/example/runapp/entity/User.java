@@ -5,6 +5,7 @@ package com.example.runapp.entity;
  */
 
 public class User {
+     private String id;
      private String name;
      private  String pass;
      private String nickname;
@@ -15,6 +16,14 @@ public class User {
           this.pass = pass;
           this.nickname = nickname;
           this.phone = phone;
+     }
+
+     public String getId() {
+          return id;
+     }
+
+     public void setId(String id) {
+          this.id = id;
      }
 
      public User(String name, String pass, String nickname, String phone, String urlimg) {

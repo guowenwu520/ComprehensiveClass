@@ -1,12 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Add_Run_Dialog_Activity">
+<TextView
+    android:id="@+id/top"
+    android:background="@color/colorAccent"
+    android:gravity="center"
+    android:text="@string/addsport"
+    android:textSize="30sp"
+    android:textColor="@color/white"
+    android:textStyle="bold"
+    android:paddingTop="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="70dp" />
+<ImageView
+android:id="@+id/register"
+android:onClick="Back"
+android:textStyle="bold"
+android:gravity="center"
+android:layout_marginTop="30sp"
+android:background="@drawable/back"
+android:textSize="20sp"
+android:layout_marginLeft="20dp"
+android:layout_width="30dp"
+android:layout_height="30dp" />
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_below="@id/top">
 <RelativeLayout
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <RelativeLayout
         android:id="@+id/nickname"
-        android:layout_below="@id/head"
         android:layout_width="match_parent"
         android:layout_height="75dp">
         <TextView
@@ -162,7 +192,7 @@
          android:layout_centerHorizontal="true"
          android:layout_width="300dp"
          android:layout_height="200dp" />
-    <VideoView
+    <ImageView
         android:visibility="invisible"
         android:id="@+id/playvdieo"
         android:layout_below="@id/ssss"
@@ -182,11 +212,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/add_recycle"
         android:layout_below="@id/ssss2"
+        android:padding="5dp"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
-        android:layout_width="300dp"
-        android:layout_height="200dp" >
+        android:background="@drawable/edittext_in_bg_class"
+        android:layout_width="350dp"
+        android:layout_height="250dp" >
     </android.support.v7.widget.RecyclerView>
+    <Button
+        android:onClick="Save"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/add_recycle"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="@string/save"
+        android:background="@drawable/button_bg"
+        android:layout_width="100dp"
+        android:layout_height="40dp" />
 </RelativeLayout>
 </ScrollView>
+</RelativeLayout>

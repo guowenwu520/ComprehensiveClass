@@ -9,7 +9,6 @@
         android:id="@+id/topclass"
         android:background="@color/colorAccent"
         android:gravity="center"
-        android:text="@string/setting"
         android:textSize="30sp"
         android:textColor="@color/white"
         android:textStyle="bold"
@@ -35,7 +34,6 @@
 
     </android.support.v7.widget.RecyclerView>
     <ImageView
-        android:visibility="invisible"
         android:id="@+id/add_image"
         android:layout_margin="30dp"
         android:layout_alignParentRight="true"

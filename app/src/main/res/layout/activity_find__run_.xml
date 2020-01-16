@@ -1,9 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".find_Run_Activity">
+    <TextView
+        android:id="@+id/top"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="详细信息"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:paddingTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp" />
+    <ImageView
+        android:id="@+id/register"
+        android:onClick="Back"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="30sp"
+        android:background="@drawable/back"
+        android:textSize="20sp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.runapp.find_Run_Activity">
+    <FrameLayout
+        android:clickable="true"
+        android:id="@+id/img_freament"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
 
-</android.support.constraint.ConstraintLayout>
+    </FrameLayout>
+    <TextView
+        android:id="@+id/title"
+        android:layout_alignBottom="@+id/img_freament"
+        android:layout_margin="20dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/cllone"
+        android:layout_alignBottom="@+id/img_freament"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        android:src="@drawable/love"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+    <TextView
+        android:id="@+id/jianjie"
+        android:layout_below="@id/img_freament"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <RelativeLayout
+        android:layout_below="@id/jianjie"
+        android:id="@+id/wenzhi"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <ImageView
+            android:src="@drawable/jiantou"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+        <TextView
+            android:id="@+id/position"
+            android:text="@string/adress"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="30dp"
+            android:layout_centerVertical="true"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/phone"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="240dp"
+            android:layout_centerVertical="true"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_alignParentBottom="true"
+            android:background="@color/gray"
+            android:layout_width="match_parent"
+            android:layout_height="2dp" />
+    </RelativeLayout>
+    <VideoView
+        android:layout_margin="10dp"
+        android:id="@+id/playvdeo"
+        android:layout_below="@id/wenzhi"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+    <TextView
+        android:text="用户评论"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:id="@+id/li"
+        android:layout_below="@id/playvdeo"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <TextView
+        android:id="@+id/ki"
+        android:layout_below="@id/li"
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="2dp" />
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@id/ki"
+        android:id="@+id/pinrling_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="500dp">
+
+    </android.support.v7.widget.RecyclerView>
+</RelativeLayout>
+    </ScrollView>
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_alignParentTop="true"
+            android:background="@color/gray"
+            android:layout_width="match_parent"
+            android:layout_height="2dp" />
+        <EditText
+            android:id="@+id/editpinglun"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/edittext_in_bg_class"
+            android:layout_width="250dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/buttonseed"
+            android:layout_margin="5dp"
+            android:text="发送"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@drawable/button_bg"
+            android:layout_toRightOf="@+id/editpinglun"
+            android:layout_centerVertical="true"
+            android:layout_width="90dp"
+            android:layout_height="40dp" />
+    </RelativeLayout>
+</RelativeLayout>

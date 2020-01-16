@@ -38,6 +38,7 @@
             android:gravity="center"
             android:button="@null"
             android:paddingTop="1dp"
+            android:checked="true"
             android:drawableTop="@drawable/selector_tab_home"
             android:textColor="@drawable/selector_tab_color"
             android:text="@string/home"/>

@@ -54,7 +54,8 @@ public class CollAndRel_Actvity extends AppCompatActivity {
          addimg.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-
+               Intent intent=new Intent(CollAndRel_Actvity.this,Add_Run_Dialog_Activity.class);
+               startActivity(intent);
              }
          });
         CollAndRel_Actvity.MyRecycleViewClassAdapter myRecycleViewClassAdapter=new CollAndRel_Actvity.MyRecycleViewClassAdapter();
