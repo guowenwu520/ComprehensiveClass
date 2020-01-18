@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.runapp.Data.DataAccess;
+import com.example.runapp.entity.User;
 import com.example.runapp.util.Common_Uitl;
 
 public class Register_Activity extends AppCompatActivity {
@@ -25,8 +27,8 @@ public class Register_Activity extends AppCompatActivity {
     }
 
     public void Register(View view) {
-        String namevalue=name.getText().toString().trim();
-        String passvalue=pass.getText().toString().trim();
+        final String namevalue=name.getText().toString().trim();
+        final String passvalue=pass.getText().toString().trim();
         String Confirmpassvalue=Confirmpass.getText().toString().trim();
         if(Common_Uitl.IsEmptyString(namevalue)||Common_Uitl.IsEmptyString(passvalue)||Common_Uitl.IsEmptyString(Confirmpassvalue)){
             Common_Uitl.showToast(this,"输入不能为空");
@@ -37,7 +39,9 @@ public class Register_Activity extends AppCompatActivity {
                 int fign=0;
                 @Override
                 protected Void doInBackground(Void... voids) {
-
+                    User user=new User(namevalue,passvalue,"0","0","0");
+                    user.setId(Common_Uitl.getTimeId());
+                    DataAccess.insertUser(user);
                     return null;
                 }
 

@@ -128,7 +128,7 @@ public class find_Run_Activity extends AppCompatActivity {
                 if(seddsmg.equals("")){
                     Common_Uitl.showToast(find_Run_Activity.this,"发送消息不能为空");
                 }else {
-                    data.add(new Comment(Common_Uitl.getTimeId(),sportsDetail.getId(), Singleton.getInstance().getUser().getId(),seddsmg,new SimpleDateFormat("yyyy-MM-dd HH:mm").format(new Date()), Singleton.getInstance().getUser().getName(), Singleton.getInstance().getUser().getUrlimg()));
+                    data.add(new Comment(Common_Uitl.getTimeId(),sportsDetail.getId(), Singleton.getInstance().getUser().getId(),seddsmg,new   SimpleDateFormat("yyyy-MM-dd HH:mm").format(new Date()), Singleton.getInstance().getUser().getMyname(), Singleton.getInstance().getUser().getUrlimg()));
                     myRecycleViewClassAdapter.notifyDataSetChanged();
                 }
             }

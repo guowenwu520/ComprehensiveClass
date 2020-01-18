@@ -24,6 +24,7 @@ import com.example.runapp.Setting_Activity;
 import com.example.runapp.util.Common_Uitl;
 import com.example.runapp.util.Singleton;
 
+import static com.example.runapp.Data.DataAccess.URL_IMG_ACCESS;
 import static com.example.runapp.MainHome.ISSINMG;
 
 /**
@@ -46,16 +47,28 @@ public class fragment_my extends Fragment {
         Setting=view.findViewById(R.id.Setting);
         CollectionNumber=view.findViewById(R.id.CollectionNumber);
         ReleaseNumber=view.findViewById(R.id.ReleaseNumber);
-        init();
         return view;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        init();
     }
 
     private void init() {
         MainHome.isShowTop(false);
         if(ISSINMG){
             sign.setText(getResources().getString(R.string.editsing));
-            name.setText(Singleton.getInstance().getUser().getName());
-            Glide.with(getActivity()).load(Singleton.getInstance().getUser().getUrlimg()).apply(RequestOptions.bitmapTransform(new CircleCrop())).into(head);
+            name.setText(Singleton.getInstance().getUser().getMyname());
+            if(Singleton.getInstance().getUser().getUrlimg().equals("0")){
+                Glide.with(getActivity()).load(R.drawable.defulthead).apply(RequestOptions.bitmapTransform(new CircleCrop())).into(head);
+                name.setText(getResources().getString(R.string.defaultname));
+                CollectionNumber.setText("0");
+                ReleaseNumber.setText("0");
+            }else {
+                Glide.with(getActivity()).load(URL_IMG_ACCESS+Singleton.getInstance().getUser().getUrlimg()).apply(RequestOptions.bitmapTransform(new CircleCrop())).into(head);
+            }
         }else{
             sign.setText(getResources().getString(R.string.nusing));
             name.setText(getResources().getString(R.string.defaultname));
@@ -80,6 +93,7 @@ public class fragment_my extends Fragment {
             public void onClick(View v) {
                 Intent intent=new Intent(getContext(), MainActivity.class);
                 startActivity(intent);
+                getActivity().finish();
             }
         });
         Release.setOnClickListener(new View.OnClickListener() {

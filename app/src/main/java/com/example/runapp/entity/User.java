@@ -6,13 +6,13 @@ package com.example.runapp.entity;
 
 public class User {
      private String id;
-     private String name;
+     private String myname;
      private  String pass;
      private String nickname;
      private String phone;
      private  String urlimg;
      public User(String name, String pass, String nickname, String phone) {
-          this.name = name;
+          this.myname = name;
           this.pass = pass;
           this.nickname = nickname;
           this.phone = phone;
@@ -27,7 +27,7 @@ public class User {
      }
 
      public User(String name, String pass, String nickname, String phone, String urlimg) {
-          this.name = name;
+          this.myname = name;
           this.pass = pass;
           this.nickname = nickname;
           this.phone = phone;
@@ -42,12 +42,12 @@ public class User {
           this.urlimg = urlimg;
      }
 
-     public String getName() {
-          return name;
+     public String getMyname() {
+          return myname;
      }
 
-     public void setName(String name) {
-          this.name = name;
+     public void setMyname(String name) {
+          this.myname = name;
      }
 
      public String getPass() {
@@ -72,5 +72,17 @@ public class User {
 
      public void setPhone(String phone) {
           this.phone = phone;
+     }
+
+     @Override
+     public String toString() {
+          return "User{" +
+                  "id='" + id + '\'' +
+                  ", myname='" + myname + '\'' +
+                  ", pass='" + pass + '\'' +
+                  ", nickname='" + nickname + '\'' +
+                  ", phone='" + phone + '\'' +
+                  ", urlimg='" + urlimg + '\'' +
+                  '}';
      }
 }
