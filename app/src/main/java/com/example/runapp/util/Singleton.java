@@ -3,6 +3,8 @@ package com.example.runapp.util;
 import com.example.runapp.entity.SportsDetail;
 import com.example.runapp.entity.User;
 
+import java.util.ArrayList;
+
 /**
  * Created by 18179 on 2020/1/15.
  */
@@ -11,6 +13,7 @@ public class Singleton {
     private static Singleton uniqueInstance = null;
     private User user=new User("hh","89900","sdsds","232343","http://img1.imgtn.bdimg.com/it/u=3675415932,4054970339&fm=26&gp=0.jpg");
     private SportsDetail sportsDetail;
+    ArrayList<SportsDetail> sportsDetails=new ArrayList<>();
     private Singleton(){
     }
     public static synchronized Singleton getInstance(){
@@ -21,6 +24,14 @@ public class Singleton {
         }
         //如果有值，那就直接使用
         return uniqueInstance;
+    }
+
+    public ArrayList<SportsDetail> getSportsDetails() {
+        return sportsDetails;
+    }
+
+    public void setSportsDetails(ArrayList<SportsDetail> sportsDetails) {
+        this.sportsDetails = sportsDetails;
     }
 
     public SportsDetail getSportsDetail() {

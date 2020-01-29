@@ -31,8 +31,16 @@
             android:layout_width="match_parent"
             android:layout_height="2dp" />
     </RelativeLayout>
+    <ImageView
+        android:id="@+id/kong"
+        android:src="@drawable/kong"
+        android:layout_below="@id/wenzhi"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/search_recycle"
+        android:visibility="invisible"
         android:layout_below="@id/wenzhi"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

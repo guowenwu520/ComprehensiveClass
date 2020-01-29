@@ -10,7 +10,7 @@ public class Comment {
     private String userid;
     private String msg;
     private String time;
-    private String name;
+    private String names;
     private String imgurl;
 
     public Comment(String id, String sprrtsid, String userid, String msg, String time, String name, String imgurl) {
@@ -19,7 +19,7 @@ public class Comment {
         this.userid = userid;
         this.msg = msg;
         this.time = time;
-        this.name = name;
+        this.names = name;
         this.imgurl = imgurl;
     }
 
@@ -63,12 +63,12 @@ public class Comment {
         this.time = time;
     }
 
-    public String getName() {
-        return name;
+    public String getNames() {
+        return names;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNames(String name) {
+        this.names = name;
     }
 
     public String getImgurl() {

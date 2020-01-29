@@ -64,7 +64,17 @@
         android:id="@+id/jianjie"
         android:layout_below="@id/img_freament"
         android:gravity="center"
-        android:layout_width="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp" />
+    <ImageView
+        android:id="@+id/phoneNo"
+        android:layout_below="@id/img_freament"
+        android:gravity="center"
+        android:src="@drawable/phone"
+        android:layout_marginRight="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_width="40dp"
         android:layout_height="40dp" />
     <RelativeLayout
         android:layout_below="@id/jianjie"

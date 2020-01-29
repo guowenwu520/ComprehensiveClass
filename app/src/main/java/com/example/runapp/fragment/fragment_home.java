@@ -1,12 +1,14 @@
 package com.example.runapp.fragment;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,12 +25,15 @@ import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.runapp.Add_Run_Dialog_Activity;
 import com.example.runapp.CollAndRel_Actvity;
+import com.example.runapp.Data.DataAccess;
 import com.example.runapp.MainHome;
 import com.example.runapp.Map_Activity;
 import com.example.runapp.R;
 import com.example.runapp.Sports_Details_Activity;
 import com.example.runapp.entity.RunClass;
+import com.example.runapp.entity.SportsDetail;
 import com.example.runapp.util.OnClisterItem;
+import com.example.runapp.util.Singleton;
 
 import java.util.ArrayList;
 
@@ -41,8 +46,10 @@ public class fragment_home extends Fragment {
     TextView postion;
     RecyclerView recyclerView;
     ImageView addImage;
-   double latv,lonv;
+   public  static  double latv,lonv;
+   public static String adress;
    ArrayList<RunClass> data=new ArrayList<>();
+   ArrayList<SportsDetail> sportsDetails=new ArrayList<>();
     //声明AMapLocationClient类对象
     public AMapLocationClient mLocationClient = null;
     @Nullable
@@ -68,9 +75,10 @@ public class fragment_home extends Fragment {
             public void onLocationChanged(AMapLocation amapLocation) {
 
                 if (amapLocation != null) {
-                  //  Log.e("er",amapLocation.getErrorInfo());
+                   Log.e("er",amapLocation.getErrorInfo());
                     if (amapLocation.getErrorCode() == 0) {
                         postion.setText(amapLocation.getAddress());
+                        adress=amapLocation.getAddress();
                         latv=amapLocation.getLatitude();
                         lonv=amapLocation.getLongitude();
                     }
@@ -91,20 +99,7 @@ public class fragment_home extends Fragment {
                 startActivity(intent);
             }
         });
-        //渲染数据
-        MyRecycleViewClassAdapter myRecycleViewClassAdapter=new MyRecycleViewClassAdapter();
-        recyclerView.setAdapter(myRecycleViewClassAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        myRecycleViewClassAdapter.setOnClisterItem(new OnClisterItem() {
-            @Override
-            public void onItemLister(View.OnClickListener onClickListener, int postion) {
 
-                Intent intent=new Intent(getActivity(), Sports_Details_Activity.class);
-                intent.putExtra("id",data.get(postion).getId());
-                intent.putExtra("name",data.get(postion).getClasss());
-                startActivity(intent);
-            }
-        });
         addImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,10 +110,43 @@ public class fragment_home extends Fragment {
     }
 
     public void getData() {
-        data.add(new RunClass("123","羽毛球","羽毛球wanshu","34"));
-        data.add(new RunClass("123","羽毛球","羽毛球wanshu","34"));
-        data.add(new RunClass("123","羽毛球","羽毛球wanshu","34"));
-        data.add(new RunClass("123","羽毛球","羽毛球wanshu","34"));
+        new AsyncTask<Void,Void,Void>(){
+            @Override
+            protected Void doInBackground(Void... voids) {
+               data= DataAccess.getRunClass();
+                sportsDetails=DataAccess.getSprtsDetail();
+                for (int j=0;j<data.size();j++) {
+                    int k=0;
+                    for (int i = 0; i < sportsDetails.size(); i++) {
+                        if (sportsDetails.get(i).getClassid().equals(data.get(j).getId())) {
+                         k++;
+                        }
+                    }
+                    data.get(j).setClassnumber(k+"");
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                //渲染数据
+                MyRecycleViewClassAdapter myRecycleViewClassAdapter=new MyRecycleViewClassAdapter();
+                recyclerView.setAdapter(myRecycleViewClassAdapter);
+                recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                Singleton.getInstance().setSportsDetails(sportsDetails);
+                myRecycleViewClassAdapter.setOnClisterItem(new OnClisterItem() {
+                    @Override
+                    public void onItemLister(View.OnClickListener onClickListener, int postion) {
+
+                        Intent intent=new Intent(getActivity(), Sports_Details_Activity.class);
+                        intent.putExtra("id",data.get(postion).getId());
+                        intent.putExtra("name",data.get(postion).getClasss());
+                        startActivity(intent);
+                    }
+                });
+            }
+        }.execute();
+
         Glide.with(getActivity()).load(R.drawable.addimg).apply(RequestOptions.bitmapTransform(new CircleCrop())).into(addImage);
     }
 

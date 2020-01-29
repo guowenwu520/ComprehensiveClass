@@ -1,6 +1,7 @@
 package com.example.runapp.fragment;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -17,12 +18,16 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.runapp.CollAndRel_Actvity;
+import com.example.runapp.Data.DataAccess;
 import com.example.runapp.MainActivity;
 import com.example.runapp.MainHome;
 import com.example.runapp.R;
 import com.example.runapp.Setting_Activity;
+import com.example.runapp.entity.SportsDetail;
 import com.example.runapp.util.Common_Uitl;
 import com.example.runapp.util.Singleton;
+
+import java.util.ArrayList;
 
 import static com.example.runapp.Data.DataAccess.URL_IMG_ACCESS;
 import static com.example.runapp.MainHome.ISSINMG;
@@ -67,6 +72,24 @@ public class fragment_my extends Fragment {
                 CollectionNumber.setText("0");
                 ReleaseNumber.setText("0");
             }else {
+                new AsyncTask<Void,Void,Void>(){
+                    int collections=0,reease=0;
+                    @Override
+                    protected Void doInBackground(Void... voids) {
+                        ArrayList<SportsDetail > data= DataAccess.getCollteions(Singleton.getInstance().getUser().getId());
+                        collections=data.size();
+                 data= DataAccess.getSprtsDetailUser(Singleton.getInstance().getUser().getId());
+                        reease=data.size();
+                        return null;
+                    }
+
+                    @Override
+                    protected void onPostExecute(Void aVoid) {
+                        super.onPostExecute(aVoid);
+                        CollectionNumber.setText(collections+"");
+                        ReleaseNumber.setText(reease+"");
+                    }
+                }.execute();
                 Glide.with(getActivity()).load(URL_IMG_ACCESS+Singleton.getInstance().getUser().getUrlimg()).apply(RequestOptions.bitmapTransform(new CircleCrop())).into(head);
             }
         }else{

@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.media.MediaMetadataRetriever;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -28,6 +29,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -39,7 +41,10 @@ import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.bumptech.glide.Glide;
+import com.example.runapp.Data.DataAccess;
+import com.example.runapp.entity.RunClass;
 import com.example.runapp.entity.SportsDetail;
+import com.example.runapp.util.Common_Uitl;
 import com.example.runapp.util.FileUtilcll;
 import com.example.runapp.util.OnClisterItem;
 import com.example.runapp.util.Singleton;
@@ -53,6 +58,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+import static com.example.runapp.fragment.fragment_home.adress;
+import static com.example.runapp.fragment.fragment_home.latv;
+import static com.example.runapp.fragment.fragment_home.lonv;
+
 /**
  * Created by 18179 on 2020/1/16.
  */
@@ -63,8 +72,10 @@ public class Add_Run_Dialog_Activity   extends AppCompatActivity {
     ImageView videoView;
     RecyclerView recyclerView;
     Spinner classs_ports;
-    String videourl;
-    String strclassport[] =new String[]{"乒乓球","羽毛球"};
+    String videourl="";
+    String classid;
+    ArrayList<String>  strclassport=new ArrayList<>();
+    ArrayList<String>  classids=new ArrayList<>();
     ArrayList<String> datas =new ArrayList<>();
     public final static int CAMERA_RESULT_CODE=0;
     public final static int ALBUM_RESULT_CODE=1;
@@ -82,16 +93,16 @@ public class Add_Run_Dialog_Activity   extends AppCompatActivity {
         address=findViewById(R.id.address);
         time=findViewById(R.id.time);
         xiangx=findViewById(R.id.xiangx);
-        address=findViewById(R.id.address);
         addvdeio=findViewById(R.id.kkk);
         videoView=findViewById(R.id.playvdieo);
         recyclerView=findViewById(R.id.add_recycle);
         classs_ports=findViewById(R.id.class_sprot);
         getData();
-        init();
     }
 
     private void init() {
+        address.setText(adress);
+        if(classids.size()>0)classid=classids.get(0);
         ArrayAdapter<String> stringArrayAdapter=new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item,strclassport);
         classs_ports.setAdapter(stringArrayAdapter);
         addvdeio.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +117,17 @@ public class Add_Run_Dialog_Activity   extends AppCompatActivity {
 //                vedioPlayer(videourl);
 //            }
 //        });
+       classs_ports.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+           @Override
+           public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+               classid=classids.get(position);
+           }
+
+           @Override
+           public void onNothingSelected(AdapterView<?> parent) {
+
+           }
+       });
         myRecycleViewClassAdapter=new Add_Run_Dialog_Activity.MyRecycleViewClassAdapter();
         recyclerView.setAdapter(myRecycleViewClassAdapter);
         recyclerView.setLayoutManager(new GridLayoutManager(this,3));
@@ -223,10 +245,47 @@ public class Add_Run_Dialog_Activity   extends AppCompatActivity {
     }
 
     public void Save(View view) {
+        final String titilev=title.getText().toString();
+        final String addressv=address.getText().toString();
+        final String timev=time.getText().toString();
+        final String xiangxv=xiangx.getText().toString();
+        if(datas.size()>0&&!timev.equals("")&&!titilev.equals("")&&!addressv.equals("")&&!xiangxv.equals("")){
+            new Thread(){
+                @Override
+                public void run() {
+                    super.run();
+                    datas.remove(datas.size()-1);
+                    datas.add(videourl);
+                    DataAccess.updata(datas,timev,titilev,addressv,xiangxv,classid,Singleton.getInstance().getUser().getId(),latv,lonv,Singleton.getInstance().getUser().getPhone());
+                }
+            }.start();
+            Common_Uitl.showToast(Add_Run_Dialog_Activity.this,"发布成功");
+            finish();
+        }else{
+            Common_Uitl.showToast(Add_Run_Dialog_Activity.this,"请保持信息完整");
+        }
+
     }
 
     public void getData() {
         datas.add("0");
+        new AsyncTask<Void,Void,Void>(){
+            @Override
+            protected Void doInBackground(Void... voids) {
+                ArrayList<RunClass> das=DataAccess.getRunClass();
+                for(int i=0;i<das.size();i++){
+                    strclassport.add(das.get(i).getClasss());
+                    classids.add(das.get(i).getId());
+                }
+                return  null;
+            }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                init();
+            }
+        }.execute();
+
     }
     //适配器
     class  MyRecycleViewClassAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

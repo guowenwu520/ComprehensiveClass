@@ -94,6 +94,7 @@ public class MainHome extends AppCompatActivity {
     private void initPermission() {
         String[] permissions = new String[]{Manifest.permission.CAMERA,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.ACCESS_COARSE_LOCATION,
                 Manifest.permission.READ_EXTERNAL_STORAGE};
         //检查权限
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)

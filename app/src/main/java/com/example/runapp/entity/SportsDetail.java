@@ -1,25 +1,34 @@
 package com.example.runapp.entity;
 
+import java.util.ArrayList;
+
 /**
  * Created by 18179 on 2020/1/15.
  */
 
-public class SportsDetail {
+    public class SportsDetail {
     private  String id;
     private  String classid;
     private String userid;
     private String address;
     private String tiem;
-    private  String [] imgurls;
-    private String  videourl;
     //简介
     private String briefIntroduction;
    private  String title;
+    ArrayList<Imgs> strings;
    //详细信息
    private  String detailmesg;
    private  String phone;
   private  String lat,lon;
     public SportsDetail() {
+    }
+
+    public ArrayList<Imgs> getStrings() {
+        return strings;
+    }
+
+    public void setStrings(ArrayList<Imgs> strings) {
+        this.strings = strings;
     }
 
     public String getLat() {
@@ -38,14 +47,12 @@ public class SportsDetail {
         this.lon = lon;
     }
 
-    public SportsDetail(String id, String classid, String userid, String address, String tiem, String[] imgurls, String videourl, String briefIntroduction, String title, String detailmesg, String phone) {
+    public SportsDetail(String id, String classid, String userid, String address, String tiem, String briefIntroduction, String title, String detailmesg, String phone) {
         this.id = id;
         this.classid = classid;
         this.userid = userid;
         this.address = address;
         this.tiem = tiem;
-        this.imgurls = imgurls;
-        this.videourl = videourl;
         this.briefIntroduction = briefIntroduction;
         this.title = title;
         this.detailmesg = detailmesg;
@@ -92,21 +99,7 @@ public class SportsDetail {
         this.tiem = tiem;
     }
 
-    public String[] getImgurls() {
-        return imgurls;
-    }
 
-    public void setImgurls(String[] imgurls) {
-        this.imgurls = imgurls;
-    }
-
-    public String getVideourl() {
-        return videourl;
-    }
-
-    public void setVideourl(String videourl) {
-        this.videourl = videourl;
-    }
 
     public String getBriefIntroduction() {
         return briefIntroduction;
