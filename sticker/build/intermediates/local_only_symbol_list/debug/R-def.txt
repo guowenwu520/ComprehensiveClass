@@ -1,0 +1,13 @@
+R_DEF: Internal format may change without notice
+local
+attr? borderAlpha
+attr? borderColor
+attr? borderWidth
+attr? bringToFrontCurrentSticker
+attr? showBorder
+attr? showIcons
+drawable sticker_ic_close_white_18dp
+drawable sticker_ic_flip_white_18dp
+drawable sticker_ic_scale_white_18dp
+drawable sticker_transparent_background
+styleable StickerView showIcons showBorder borderWidth bringToFrontCurrentSticker borderColor borderAlpha

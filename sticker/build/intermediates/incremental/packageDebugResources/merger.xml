@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\18179\Desktop\videoEditer\sticker\src\main\res"/><source path="C:\Users\18179\Desktop\videoEditer\sticker\build\generated\res\rs\debug"/><source path="C:\Users\18179\Desktop\videoEditer\sticker\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\18179\Desktop\videoEditer\sticker\src\main\res"><file name="sticker_transparent_background" path="C:\Users\18179\Desktop\videoEditer\sticker\src\main\res\drawable\sticker_transparent_background.xml" qualifiers="" type="drawable"/><file name="sticker_ic_close_white_18dp" path="C:\Users\18179\Desktop\videoEditer\sticker\src\main\res\drawable-xxhdpi\sticker_ic_close_white_18dp.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="sticker_ic_flip_white_18dp" path="C:\Users\18179\Desktop\videoEditer\sticker\src\main\res\drawable-xxhdpi\sticker_ic_flip_white_18dp.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="sticker_ic_scale_white_18dp" path="C:\Users\18179\Desktop\videoEditer\sticker\src\main\res\drawable-xxhdpi\sticker_ic_scale_white_18dp.png" qualifiers="xxhdpi-v4" type="drawable"/><file path="C:\Users\18179\Desktop\videoEditer\sticker\src\main\res\values\attrs.xml" qualifiers=""><declare-styleable name="StickerView">
+        <attr format="boolean" name="showIcons"/>
+        <attr format="boolean" name="showBorder"/>
+        <attr format="dimension" name="borderWidth"/>
+        <attr format="boolean" name="bringToFrontCurrentSticker"/>
+        <attr format="color" name="borderColor"/>
+        <attr format="integer" name="borderAlpha"/>
+    </declare-styleable></file></source><source path="C:\Users\18179\Desktop\videoEditer\sticker\build\generated\res\rs\debug"/><source path="C:\Users\18179\Desktop\videoEditer\sticker\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\18179\Desktop\videoEditer\sticker\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\18179\Desktop\videoEditer\sticker\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="StickerView">
+        <attr format="boolean" name="showIcons"/>
+        <attr format="boolean" name="showBorder"/>
+        <attr format="dimension" name="borderWidth"/>
+        <attr format="boolean" name="bringToFrontCurrentSticker"/>
+        <attr format="color" name="borderColor"/>
+        <attr format="integer" name="borderAlpha"/>
+    </declare-styleable></configuration></mergedItems></merger>

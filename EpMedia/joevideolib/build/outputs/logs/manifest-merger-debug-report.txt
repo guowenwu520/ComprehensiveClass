@@ -1,0 +1,55 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml:1:1-16:12
+INJECTED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml:1:1-16:12
+INJECTED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml:1:1-16:12
+INJECTED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml:1:1-16:12
+INJECTED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml:1:1-16:12
+	package
+		ADDED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml:2:11-40
+		INJECTED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml
+		ADDED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml:1:1-16:12
+		INJECTED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml:4:5-80
+	android:name
+		ADDED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml:4:22-78
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml:5:5-72
+	android:name
+		ADDED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml:5:22-70
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml:6:5-83
+	android:name
+		ADDED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml:6:22-81
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml:7:22-77
+application
+ADDED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml:9:5-14:19
+	android:supportsRtl
+		ADDED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml:11:18-44
+	android:label
+		ADDED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml:10:18-50
+	android:allowBackup
+		ADDED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml:9:18-44
+uses-sdk
+INJECTED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml
+INJECTED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml
+INJECTED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml
+INJECTED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml
+		ADDED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml
+		ADDED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\18179\Desktop\videoEditer\EpMedia\joevideolib\src\main\AndroidManifest.xml
