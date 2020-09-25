@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="edit_action_menu_bar">
+        <item>Music</item>
+        <item>Filter</item>
+        <item>Paster</item>
+        <item>Size</item>
+        <item>Speed</item>
+    </array>
+</resources>

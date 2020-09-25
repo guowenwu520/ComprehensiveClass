@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/black"
+    android:layout_height="match_parent"
+    tools:context=".ui.VideoClipActivity">
+    <FrameLayout
+        android:id="@+id/top_Layout"
+        android:layout_width="match_parent"
+        android:paddingTop="25dp"
+        android:layout_height="80dp"
+        app:layout_constraintTop_toTopOf="parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="25dp"
+                android:src="@drawable/icon_back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"/>
+
+            <TextView
+                android:id="@+id/edit_save_btn"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/btn_small"
+                android:text="@string/save"
+                android:textColor="@color/white"
+                android:layout_width="70dp"
+                android:layout_height="30dp"/>
+        </RelativeLayout>
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/stock_lay"
+        app:layout_constraintTop_toBottomOf="@id/top_Layout"
+        app:layout_constraintBottom_toTopOf="@id/edit_show_video_slide_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <SurfaceView
+            android:id="@+id/edit_show_effect_view"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"/>
+    </FrameLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@color/black50"
+        app:layout_constraintBottom_toTopOf="@id/edit_show_video_slide_view"
+        tools:layout_editor_absoluteX="-101dp">
+
+        <TextView
+            android:id="@+id/edit_show_now_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="00:30/01:20"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/edit_show_play_status"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/icon_play"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/edit_show_back_step"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/icon_undo_left_disable"
+            android:layout_marginRight="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/edit_show_next_step"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/edit_show_next_step"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/icon_undo_right_disable"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.example.vaporwaveVideo.ui.view.VideoSlideShowView
+        android:id="@+id/edit_show_video_slide_view"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="15dp"
+        app:layout_constraintBottom_toTopOf="@id/results_display_recycleview"
+        app:layout_constraintEnd_toStartOf="@+id/edit_show_crop_button"
+         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/edit_show_crop_button"
+        app:layout_constraintBottom_toTopOf="@id/results_display_recycleview"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/icon_clip2"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="30dp"
+        android:layout_height="30dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/results_display_recycleview"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"/>
+    
+</androidx.constraintlayout.widget.ConstraintLayout>

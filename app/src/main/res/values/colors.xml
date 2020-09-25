@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#17171a</color>
-    <color name="colorPrimaryDark">#18181a</color>
-    <color name="gray">#807a7a</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#C210AC</color>
+    <color name="colorPrimaryDark">#C210AC</color>
+    <color name="colorAccent">#F32278</color>
     <color name="white">#fff</color>
-    <color name="powderblue">#42d5ef</color>
+    <color name="black">#000</color>
+    <color name="grey300">#333</color>
+    <color name="grey600">#666</color>
+    <color name="pink">#F32278</color>
+    <color name="grey100">#111</color>
+    <color name="dialog_text">#C210AC</color>
+    <color name="dialog_text20">#33C210AC</color>
+    <color name="black50">#80000000</color>
+    <color name="black100">#00ffffff</color>
+    <color name="yellow">#FFEB3B</color>
+
+    <color name="none">#00ff4081</color>
+    <color name="warn">#89F5485C</color>
+    <color name="antique">#5870F1</color>
+    <color name="inkwell">#3C3B3B</color>
+    <color name="brannan">#DB7B05</color>
+    <color name="n1977">#DB5931</color>
+    <color name="freud">#0F0B0B</color>
+    <color name="hefe">#3A0909</color>
+    <color name="hudson">#E0582E</color>
+    <color name="nashville">#2196F3</color>
+    <color name="cool">#104081</color>
 </resources>

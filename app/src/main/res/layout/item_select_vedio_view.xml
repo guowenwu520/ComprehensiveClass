@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:background="@color/grey300"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:id="@+id/item_select_view_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/> 
+    <TextView
+        android:id="@+id/item_select_view_selectbnt"
+        android:layout_margin="5dp"
+        app:layout_constraintTop_toTopOf="@id/item_select_view_background"
+        app:layout_constraintRight_toRightOf="@id/item_select_view_background"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_width="20dp"
+        android:layout_height="20dp"/>
+    <TextView
+        android:id="@+id/item_select_view_time"
+        app:layout_constraintRight_toRightOf="@id/item_select_view_background"
+        app:layout_constraintBottom_toBottomOf="@id/item_select_view_background"
+        android:layout_margin="5dp"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

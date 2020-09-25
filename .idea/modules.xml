@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RunApp.iml" filepath="$PROJECT_DIR$/RunApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/EpMedia/joevideolib/joevideolib.iml" filepath="$PROJECT_DIR$/.idea/modules/EpMedia/joevideolib/joevideolib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sticker/sticker.iml" filepath="$PROJECT_DIR$/.idea/modules/sticker/sticker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/vaporwaveVideo.iml" filepath="$PROJECT_DIR$/.idea/modules/vaporwaveVideo.iml" />
     </modules>
   </component>
 </project>
